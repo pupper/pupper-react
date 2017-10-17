@@ -1,0 +1,22 @@
+{
+  "name": "pupper-js",
+  "version": "1.0.0",
+  "description": "PHP + React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bouiboui <dev@cod3.net>",
+  "license": "Unlicense",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "laravel-mix": "^1.5.0"
+  },
+  "dependencies": {
+    "cross-env": "^5.0.5",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
