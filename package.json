@@ -1,6 +1,6 @@
 {
-  "name": "pupper-react",
-  "version": "0.1.0",
+  "name": "@pupper/pupper-react",
+  "version": "0.1.1",
   "description": "PHP + React",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,23 @@
   "license": "Unlicense",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "laravel-mix": "^1.5.0"
+    "babel-preset-react": "^6.24.1"
   },
   "dependencies": {
-    "cross-env": "^5.0.5",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pupper/pupper-react.git"
+  },
+  "keywords": [
+    "react",
+    "php"
+  ],
+  "bugs": {
+    "url": "https://github.com/pupper/pupper-react/issues"
+  },
+  "homepage": "https://github.com/pupper/pupper-react#readme"
 }
