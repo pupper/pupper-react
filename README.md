@@ -8,6 +8,7 @@ Pupper stands for "PHP Plus React" (PPR -> Pupper). The goal is to make a Framew
 
 [See pupper on Github for more information](https://github.com/bouiboui/pupper/tree/master/app)
 
+## API
 ### SocketProvider
 
 `SocketProvider` takes a WebSocket as a prop and hydrates it to its child components.
