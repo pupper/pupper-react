@@ -37,14 +37,14 @@ export default withSocket(MyComponent)
 ```
 ---
 
-### SocketListener
+### EventListener
 
-`SocketListener` is the Component you want to extend whenever you want to **receive** updates for an event. 
+`EventListener` is the Component you want to extend whenever you want to **receive** updates for an event. 
 
 Overwrite its `onData` method to define what to do with the value.
 
 ```jsx harmony
-class CustomerLogger extends SocketListener {
+class CustomerLogger extends EventListener {
     onData(value) {
         console.log('Customer has logged', value);
     }
@@ -54,14 +54,14 @@ class CustomerLogger extends SocketListener {
 <CustomerLogger bindTo='customerHasLogged'/>
 ```
 
-### SocketDispatcher
+### EventDispatcher
 
-`SocketDispatcher` is the Component you want to extend whenever you want to **send** event updates. 
+`EventDispatcher` is the Component you want to extend whenever you want to **send** event updates. 
 
 Invoke its `onSubmit` method to send a new event with its `toSubmit` prop value.
 
 ```jsx harmony
-class LoginButton extends SocketDispatcher {
+class LoginButton extends EventDispatcher {
     render() {
         return <button onClick={this.onSubmit}>Submit</button>
     }

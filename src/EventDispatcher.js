@@ -3,9 +3,9 @@
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import ReactEvent from './ReactEvent';
+import Event from './Event';
 
-class SocketDispatcher extends Component {
+class EventDispatcher extends Component {
     constructor() {
         super();
         this.onSubmit = this.onSubmit.bind(this);
@@ -18,7 +18,7 @@ class SocketDispatcher extends Component {
     onSubmit() {
         const bindTo = this.props.bindTo || this.context.bindTo;
         this.context.socket.send(
-            new ReactEvent()
+            new Event()
                 .setName(bindTo)
                 .setValue(this.props.toSubmit)
                 .build()
@@ -30,13 +30,13 @@ class SocketDispatcher extends Component {
     }
 }
 
-SocketDispatcher.propTypes = {
+EventDispatcher.propTypes = {
     bindTo: PropTypes.string,
     toSubmit: PropTypes.string,
 };
-SocketDispatcher.contextTypes = {
+EventDispatcher.contextTypes = {
     socket: PropTypes.object.isRequired,
     bindTo: PropTypes.string,
 };
 
-export default SocketDispatcher;
+export default EventDispatcher;

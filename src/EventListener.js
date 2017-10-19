@@ -3,9 +3,9 @@
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import ReactEvent from './ReactEvent';
+import Event from './Event';
 
-class SocketListener extends Component {
+class EventListener extends Component {
     constructor() {
         super();
         this.onMessage = this.onMessage.bind(this);
@@ -19,7 +19,7 @@ class SocketListener extends Component {
     onMessage(e) {
         try {
             const bindTo = this.props.bindTo || this.context.bindTo;
-            const event = ReactEvent.parse(e.data);
+            const event = Event.parse(e.data);
             if (event.getName() === bindTo) {
                 this.onData(event.getValue());
             }
@@ -33,12 +33,12 @@ class SocketListener extends Component {
     }
 }
 
-SocketListener.propTypes = {
+EventListener.propTypes = {
     bindTo: PropTypes.string
 };
-SocketListener.contextTypes = {
+EventListener.contextTypes = {
     socket: PropTypes.object.isRequired,
     bindTo: PropTypes.string,
 };
 
-export default SocketListener;
+export default EventListener;

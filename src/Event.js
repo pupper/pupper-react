@@ -1,13 +1,13 @@
 'use strict';
 
-export default class ReactEvent {
+export default class Event {
     /**
      * @param data
-     * @return {ReactEvent}
+     * @return {Event}
      */
     static parse(data) {
         const d = JSON.parse(data);
-        const event = new ReactEvent();
+        const event = new Event();
         event.setName(d.name);
         event.setValue(d.value);
         return event;
@@ -15,7 +15,7 @@ export default class ReactEvent {
 
     /**
      * @param name
-     * @return {ReactEvent}
+     * @return {Event}
      */
     setName(name) {
         this.name = name;
@@ -24,7 +24,7 @@ export default class ReactEvent {
 
     /**
      * @param value
-     * @return {ReactEvent}
+     * @return {Event}
      */
     setValue(value) {
         this.value = value;
