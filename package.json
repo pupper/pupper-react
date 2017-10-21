@@ -1,6 +1,6 @@
 {
   "name": "@pupper/pupper-react",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "PHP + React",
   "main": "dist/pupper-react.cjs.js",
   "module": "dist/pupper-react.es.js",
