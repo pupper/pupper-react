@@ -16,7 +16,7 @@ Pupper stands for "PHP Plus React" (PPR -> Pupper). The goal is to make a Framew
 It can automatically bind them by using the `bindTo` prop, that can be overwritten.
 
 ```jsx harmony
-const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
+const globalSocket = new WebSocket('ws://127.0.0.1/ws');
 
 <SocketProvider socket={globalSocket} bindTo='customEvent'>
     
