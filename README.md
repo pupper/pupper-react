@@ -15,7 +15,7 @@ Pupper stands for "PHP Plus React" (PPR -> Pupper). The goal is to make a Framew
 
 It can automatically bind them by using the `bindTo` prop, that can be overwritten.
 
-```jsx harmony
+```jsx
 const globalSocket = new WebSocket('ws://127.0.0.1/ws');
 
 <SocketProvider socket={globalSocket} bindTo='customEvent'>
@@ -32,7 +32,7 @@ const globalSocket = new WebSocket('ws://127.0.0.1/ws');
 ### withSocket
 
 `withSocket` ables a component to be provided by `SocketProvider`.
-```jsx harmony
+```jsx
 export default withSocket(MyComponent)
 ```
 ---
@@ -43,7 +43,7 @@ export default withSocket(MyComponent)
 
 Overwrite its `onData` method to define what to do with the value.
 
-```jsx harmony
+```jsx
 class CustomerLogger extends EventListener {
     onData(value) {
         console.log('Customer has logged', value);
@@ -60,7 +60,7 @@ class CustomerLogger extends EventListener {
 
 Invoke its `onSubmit` method to send a new event with its `toSubmit` prop value.
 
-```jsx harmony
+```jsx
 class LoginButton extends EventDispatcher {
     render() {
         return <button onClick={this.onSubmit}>Submit</button>
