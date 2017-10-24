@@ -1,6 +1,6 @@
 {
   "name": "@pupper/pupper-react",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "PHP + React",
   "main": "dist/pupper-react.cjs.js",
   "module": "dist/pupper-react.es.js",
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "cross-env": "^5.1.0",
+    "debug": "^2.6.9",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
