@@ -1,6 +1,6 @@
 ![d005d89e-ff25-4450-9119-aa56ff0d8949](https://user-images.githubusercontent.com/3274103/31629229-4859fe88-b2b3-11e7-85fb-66c35710f607.png)
 
-![Software License][ico-license] ![](https://nodesecurity.io/orgs/pupper/projects/6ea466cc-ad8c-4032-8d7a-3105c1dc4832/badge)
+![Software License][ico-license] ![](https://nodesecurity.io/orgs/pupper/projects/6ea466cc-ad8c-4032-8d7a-3105c1dc4832/badge) [![bitHound Overall Score](https://www.bithound.io/github/pupper/pupper-react/badges/score.svg)](https://www.bithound.io/github/pupper/pupper-react)
 
 Pupper stands for "PHP Plus React" (PPR > Pupper). The goal is to make a Framework that takes the best of both technologies and makes them communicate bi-directionnaly.
 
