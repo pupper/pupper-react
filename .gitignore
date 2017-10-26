@@ -3,3 +3,4 @@
 /mix-manifest.json
 /dist/
 .idea
+\.nyc_output/

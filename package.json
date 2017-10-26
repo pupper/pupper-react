@@ -5,7 +5,11 @@
   "main": "dist/pupper-react.cjs.js",
   "module": "dist/pupper-react.es.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc --reporter=text-summary mocha --colors --recursive",
+    "test-babel": "mocha --compilers js:babel-core/register --colors ./test/*.test.js",
+    "test-report": "nyc --reporter=text-summary --reporter=html --reporter=cobertura --reporter=lcov mocha --colors --recursive",
+    "security-check": "nsp check",
+    "check-version": "git-npm-version-checker -v",
     "build": "rollup -c"
   },
   "files": [
@@ -18,7 +22,11 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "git-npm-version-checker": "^1.1.0",
+    "mocha": "^4.0.1",
+    "nsp": "^2.8.1",
+    "nyc": "^11.2.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
