@@ -1,51 +1,52 @@
-'use strict';
-
 export default class Event {
+
     /**
-     * @param data
-     * @return {Event}
+     * @param {string} jsonData event in JSON form
+     * @return {Event} data in Event form
      */
-    static parse(data) {
-        const d = JSON.parse(data);
-        const event = new Event();
-        event.setName(d.name);
-        event.setValue(d.value);
-        return event;
+    static parse (jsonData) {
+        const data = JSON.parse(jsonData);
+        return new Event()
+            .setName(data.name)
+            .setValue(data.value);
     }
 
     /**
-     * @param name
-     * @return {Event}
+     * @param {string} name Event name/identifier
+     * @return {Event} Fluent interface
      */
-    setName(name) {
+    setName (name) {
         this.name = name;
         return this;
     }
 
     /**
-     * @param value
-     * @return {Event}
+     * @param {*} value Event value/data
+     * @return {Event} Fluent interface
      */
-    setValue(value) {
+    setValue (value) {
         this.value = value;
         return this;
     }
 
     /**
-     * @return {*}
+     * @return {string} Event name/identifier
      */
-    getName() {
+    getName () {
         return this.name;
     }
 
     /**
-     * @return {*}
+     * @return {*} Event value/data
      */
-    getValue() {
+    getValue () {
         return this.value;
     }
 
-    build() {
+    /**
+     * @return {string} Event in JSON form
+     */
+    build () {
         return JSON.stringify({
             name: this.name,
             value: this.value

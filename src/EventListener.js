@@ -1,44 +1,35 @@
-'use strict';
-
 import {Component} from 'react';
+import Event from './Event';
 import PropTypes from 'prop-types';
 
-import Event from './Event';
-
 class EventListener extends Component {
-    constructor() {
+    constructor () {
         super();
         this.onMessage = this.onMessage.bind(this);
     }
 
-    componentWillMount() {
+    componentWillMount () {
         this.socket = this.context.socket;
         this.socket.addEventListener('message', this.onMessage);
     }
 
-    onMessage(e) {
-        try {
-            const bindTo = this.props.bindTo || this.context.bindTo;
-            const event = Event.parse(e.data);
-            if (event.getName() === bindTo) {
-                this.onData(event.getValue());
-            }
-        } catch (e) {
-            console.error(e);
-        }
+    componentWillUnmount () {
+        this.socket.removeEventListener('message', this.onMessage);
     }
 
-    componentWillUnmount() {
-        this.socket.removeEventListener('message', this.onMessage);
+    onMessage (message) {
+        const bindTo = this.props.bindTo || this.context.bindTo;
+        const event = Event.parse(message.data);
+        if (event.getName() === bindTo) {
+            this.onData(event.getValue());
+        }
     }
 }
 
-EventListener.propTypes = {
-    bindTo: PropTypes.string
-};
+EventListener.propTypes = {bindTo: PropTypes.string};
 EventListener.contextTypes = {
-    socket: PropTypes.object.isRequired,
     bindTo: PropTypes.string,
+    socket: PropTypes.object.isRequired
 };
 
 export default EventListener;
