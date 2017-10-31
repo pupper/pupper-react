@@ -1,11 +1,15 @@
-// This was shamelessly stolen from https://github.com/reactstrap/reactstrap/blob/master/rollup.config.js
-// after spending several hours trying to implement something similar on my own.
-// Thanks guys!
+/* eslint-disable */
 
-import nodeResolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+/*
+ * This was shamelessly stolen from https://github.com/reactstrap/reactstrap/blob/master/rollup.config.js
+ * after spending several hours trying to implement something similar on my own.
+ * Thanks guys!
+ */
+
 import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
 import minify from 'rollup-plugin-babel-minify';
+import nodeResolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 
 // Require understands JSON files.
@@ -14,31 +18,29 @@ const packageJson = require('./package.json');
 const peerDependencies = Object.keys(packageJson.peerDependencies);
 const dependencies = Object.keys(packageJson.dependencies);
 
-function baseConfig() {
+function baseConfig () {
     return {
-        name: 'pupper-react',
         input: 'src/index.js',
+        name: 'pupper-react',
         plugins: [
             nodeResolve(),
             commonjs(),
-            babel({plugins: ['external-helpers']}),
+            babel({plugins: ['external-helpers']})
         ],
-        sourcemap: true,
+        sourcemap: true
     };
 }
 
-function baseUmdConfig(minified) {
+function baseUmdConfig (minified) {
     const config = Object.assign(baseConfig(), {
-        globals: {
-            react: 'React',
-            'react-dom': 'ReactDOM',
-            'prop-types': 'PropTypes',
-        },
         external: peerDependencies,
+        globals: {
+            'prop-types': 'PropTypes',
+            react: 'React',
+            'react-dom': 'ReactDOM'
+        }
     });
-    config.plugins.push(replace({
-        'process.env.NODE_ENV': JSON.stringify('production'),
-    }));
+    config.plugins.push(replace({'process.env.NODE_ENV': JSON.stringify('production')}));
 
     if (minified) {
         config.plugins.push(minify({comments: false}));
@@ -48,11 +50,11 @@ function baseUmdConfig(minified) {
 }
 
 /*
-  COMMONJS / MODULE CONFIG
-  ------------------------
-  Goal of this configuration is to generate bundles to be consumed by bundlers.
-  This configuration is not minimized and will import all dependencies.
-*/
+ * COMMONJS / MODULE CONFIG
+ * ------------------------
+ * Goal of this configuration is to generate bundles to be consumed by bundlers.
+ * This configuration is not minimized and will import all dependencies.
+ */
 const libConfig = baseConfig();
 // Do not include any of the dependencies
 libConfig.external = peerDependencies.concat(dependencies);
@@ -62,20 +64,20 @@ libConfig.output = [
 ];
 
 /*
-  UMD CONFIG
-  ----------
-  Goal of this configuration is to be directly included on web pages.
-  This configuration is minimized and will include dependencies that are not
-  marked as peer dependencies. ** See below
-  Defining this config will also check that all peer dependencies are set up
-  correctly in the globals entry.
-  Reactstrap has two versions:
-  1) `pupper-react.min.js`
-  2) `pupper-react.full.min.js`
-      This file includes all dependencies.
-  For both versions the peer dependencies are always excluded and must be manually
-  included - `react` and `react-dom`.
-*/
+ * UMD CONFIG
+ * ----------
+ * Goal of this configuration is to be directly included on web pages.
+ * This configuration is minimized and will include dependencies that are not
+ * marked as peer dependencies. ** See below
+ * Defining this config will also check that all peer dependencies are set up
+ * correctly in the globals entry.
+ * Reactstrap has two versions:
+ * 1) `pupper-react.min.js`
+ * 2) `pupper-react.full.min.js`
+ * This file includes all dependencies.
+ * For both versions the peer dependencies are always excluded and must be manually
+ * included - `react` and `react-dom`.
+ */
 const umdConfig = baseUmdConfig(false);
 
 // Validate globals in main UMD config
@@ -108,5 +110,5 @@ umdConfigMin.output = [
 export default [
     libConfig,
     umdConfig,
-    umdConfigMin,
+    umdConfigMin
 ];
