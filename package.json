@@ -1,6 +1,6 @@
 {
   "name": "@pupper/pupper-react",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "PHP + React",
   "main": "dist/pupper-react.cjs.js",
   "module": "dist/pupper-react.es.js",
@@ -18,7 +18,9 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.10.0",
+    "eslint-plugin-react": "^7.4.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
@@ -26,7 +28,7 @@
     "react-dom": "^16.0.0"
   },
   "dependencies": {
-    "debug": "^3.1.0",
+    "cross-env": "^5.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

@@ -1,0 +1,55 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:all",
+    "plugin:react/all"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "react/jsx-filename-extension": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/jsx-max-props-per-line": "off",
+    "react/jsx-no-literals": "off",
+    "react/no-set-state": "off",
+    "react/no-array-index-key": "off",
+    "react/forbid-prop-types": "off",
+    "react/require-optimization": "off",
+    "react/require-default-props": "off",
+    "quote-props": "off",
+    "padded-blocks": "off",
+    "one-var": "off",
+    "no-magic-numbers": "off",
+    "prefer-template": "off",
+    "max-len": [
+      "error",
+      120
+    ],
+    "dot-location": [
+      "error",
+      "property"
+    ],
+    "react/jsx-wrap-multilines": "off"
+  }
+}

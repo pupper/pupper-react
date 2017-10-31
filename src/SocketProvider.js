@@ -1,28 +1,28 @@
-'use strict';
-
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class SocketProvider extends Component {
-    getChildContext() {
+    getChildContext () {
         return {
-            socket: this.props.socket,
             bindTo: this.props.bindTo,
+            socket: this.props.socket
         };
     }
 
-    render() {
+    render () {
         return this.props.children;
     }
 }
 
 SocketProvider.propTypes = {
-    socket: PropTypes.object.isRequired,
     bindTo: PropTypes.string,
+    children: PropTypes.any,
+    socket: PropTypes.object.isRequired
 };
+
 SocketProvider.childContextTypes = {
-    socket: PropTypes.object.isRequired,
     bindTo: PropTypes.string,
+    socket: PropTypes.object.isRequired
 };
 
 export default SocketProvider;
