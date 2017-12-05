@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 
 class SocketProvider extends Component {
     getChildContext () {
+        const {bindTo, socket} = this.props;
         return {
-            bindTo: this.props.bindTo,
-            socket: this.props.socket
+            bindTo,
+            socket
         };
     }
 
     render () {
-        return this.props.children;
+        const {children} = this.props;
+        return children;
     }
 }
 

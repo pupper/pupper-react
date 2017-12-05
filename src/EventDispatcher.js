@@ -10,7 +10,8 @@ class EventDispatcher extends Component {
     }
 
     componentWillMount () {
-        this.socket = this.context.socket;
+        const {context} = this.context;
+        this.socket = context.socket;
     }
 
     componentWillUnmount () {
@@ -18,10 +19,11 @@ class EventDispatcher extends Component {
     }
 
     onSubmit () {
-        const bindTo = this.props.bindTo || this.context.bindTo;
-        this.context.socket.send(new Event()
-            .setName(bindTo)
-            .setValue(this.props.toSubmit)
+        const {context} = this;
+        const {bindTo, toSubmit} = this.props;
+        context.socket.send(new Event()
+            .setName(bindTo || context.bindTo)
+            .setValue(toSubmit)
             .build());
     }
 }

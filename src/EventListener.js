@@ -9,7 +9,8 @@ class EventListener extends Component {
     }
 
     componentWillMount () {
-        this.socket = this.context.socket;
+        const {context} = this;
+        this.socket = context.socket;
         this.socket.addEventListener('message', this.onMessage);
     }
 
@@ -18,9 +19,10 @@ class EventListener extends Component {
     }
 
     onMessage (message) {
-        const bindTo = this.props.bindTo || this.context.bindTo;
+        const {context} = this;
+        const {bindTo} = this.props;
         const event = Event.parse(message.data);
-        if (event.getName() === bindTo) {
+        if (event.getName() === (bindTo || context.bindTo)) {
             this.onData(event.getValue());
         }
     }
