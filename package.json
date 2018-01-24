@@ -1,13 +1,15 @@
 {
   "name": "@pupper/pupper-react",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "PHP + React",
-  "main": "dist/pupper-react.cjs.js",
+  "source": "src/index.js",
+  "main": "dist/pupper-react.js",
   "module": "dist/pupper-react.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -c ./.eslintrc.json ./src --fix",
-    "build": "rollup -c"
+    "build": "microbundle",
+    "dev": "microbundle watch"
   },
   "files": [
     "dist/"
@@ -29,14 +31,10 @@
     "react-dom": "^16.0.0"
   },
   "dependencies": {
+    "microbundle": "^0.4.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-babel-minify": "^3.1.2",
-    "rollup-plugin-commonjs": "^8.2.6",
-    "rollup-plugin-node-resolve": "^3.0.2",
-    "rollup-plugin-replace": "^2.0.0"
+    "react-dom": "^16.2.0"
   },
   "repository": {
     "type": "git",
