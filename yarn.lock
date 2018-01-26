@@ -1750,9 +1750,9 @@ maxmin@^2.1.0:
     gzip-size "^3.0.0"
     pretty-bytes "^3.0.0"
 
-microbundle@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/microbundle/-/microbundle-0.4.1.tgz#60764de82a68290058942711bd75a5f16f5be57e"
+microbundle@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/microbundle/-/microbundle-0.4.2.tgz#4cc2b2046a76e70be2ea3bcc346b2749626f27a7"
   dependencies:
     acorn-jsx "4.1.0"
     asyncro "^2.0.1"
