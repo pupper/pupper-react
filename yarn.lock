@@ -2,15 +2,15 @@
 # yarn lockfile v1
 
 
+acorn-dynamic-import@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-3.0.0.tgz#901ceee4c7faaef7e07ad2a47e890675da50a278"
+  dependencies:
+    acorn "^5.0.0"
+
 acorn-es7-plugin@>=1.1.6:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/acorn-es7-plugin/-/acorn-es7-plugin-1.1.7.tgz#f2ee1f3228a90eead1245f9ab1922eb2e71d336b"
-
-acorn-jsx@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-4.1.0.tgz#e687194645bcde55e7e7e9b1859644351a27d13e"
-  dependencies:
-    acorn "^5.0.3"
 
 acorn-jsx@^3.0.0, acorn-jsx@^3.0.1:
   version "3.0.1"
@@ -18,13 +18,19 @@ acorn-jsx@^3.0.0, acorn-jsx@^3.0.1:
   dependencies:
     acorn "^3.0.4"
 
+acorn-jsx@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-4.1.1.tgz#e8e41e48ea2fe0c896740610ab6a4ffd8add225e"
+  dependencies:
+    acorn "^5.0.3"
+
 acorn5-object-spread@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/acorn5-object-spread/-/acorn5-object-spread-4.0.0.tgz#d5758081eed97121ab0be47e31caaef2aa399697"
   dependencies:
     acorn "^5.1.2"
 
-acorn@>=2.5.2, acorn@^5.0.3, acorn@^5.1.2, acorn@^5.2.1:
+acorn@>=2.5.2, acorn@^5.0.0, acorn@^5.0.3, acorn@^5.1.2, acorn@^5.2.1:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.3.0.tgz#7446d39459c54fb49a80e6ee6478149b940ec822"
 
@@ -116,9 +122,9 @@ asap@~2.0.3:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
 
-asyncro@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/asyncro/-/asyncro-2.0.1.tgz#441783c134d0e13588af894bd4f8d1c834630d5d"
+asyncro@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/asyncro/-/asyncro-3.0.0.tgz#3c7a732e263bc4a42499042f48d7d858e9c0134e"
 
 autoprefixer@^6.3.1:
   version "6.7.7"
@@ -848,10 +854,6 @@ concat-with-sourcemaps@^1.0.5:
   dependencies:
     source-map "^0.6.1"
 
-convert-source-map@^1.1.0:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
-
 core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
@@ -1169,15 +1171,6 @@ estree-walker@^0.5.0:
 esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
-
-exorcist@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/exorcist/-/exorcist-1.0.0.tgz#ac16ca162a0c55adee24b601f8b0e6e77bf34e8b"
-  dependencies:
-    is-stream "~1.1.0"
-    minimist "0.0.5"
-    mkdirp "~0.5.1"
-    mold-source-map "~0.4.0"
 
 expand-brackets@^0.1.4:
   version "0.1.5"
@@ -1581,7 +1574,7 @@ is-resolvable@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
 
-is-stream@^1.0.1, is-stream@~1.1.0:
+is-stream@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
@@ -1750,39 +1743,38 @@ maxmin@^2.1.0:
     gzip-size "^3.0.0"
     pretty-bytes "^3.0.0"
 
-microbundle@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/microbundle/-/microbundle-0.4.1.tgz#60764de82a68290058942711bd75a5f16f5be57e"
+microbundle@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/microbundle/-/microbundle-0.4.3.tgz#d1c4186b53eeb5998c75bcb65b238f47ca7b0344"
   dependencies:
-    acorn-jsx "4.1.0"
-    asyncro "^2.0.1"
+    acorn-jsx "^4.1.1"
+    asyncro "^3.0.0"
     autoprefixer "^7.2.5"
     babel-polyfill "^6.26.0"
     camelcase "^4.1.0"
     chalk "^2.3.0"
     es6-promisify "^5.0.0"
-    exorcist "^1.0.0"
     glob "^7.1.2"
     gzip-size "^4.1.0"
     pretty-bytes "^4.0.2"
     regenerator-runtime "^0.11.1"
-    rollup "^0.55.0"
+    rollup "^0.55.1"
     rollup-plugin-buble "^0.18.0"
     rollup-plugin-bundle-size "^1.0.1"
     rollup-plugin-commonjs "^8.2.6"
     rollup-plugin-es3 "^1.1.0"
     rollup-plugin-flow "^1.1.1"
     rollup-plugin-node-resolve "^3.0.2"
-    rollup-plugin-nodent "^0.1.3"
-    rollup-plugin-postcss "^1.2.6"
+    rollup-plugin-nodent "github:developit/rollup-plugin-nodent"
+    rollup-plugin-postcss "^1.2.7"
     rollup-plugin-preserve-shebang "^0.1.6"
     rollup-plugin-sizes "^0.4.2"
     rollup-plugin-strict-alias "^1.0.0"
     rollup-plugin-typescript "^0.8.1"
-    rollup-plugin-uglify "^2.0.1"
+    rollup-plugin-uglify "^3.0.0"
     sade "^1.3.1"
+    tslib "^1.9.0"
     typescript "^2.6.2"
-    uglify-es "^3.3.6"
 
 micromatch@^2.3.11:
   version "2.3.11"
@@ -1812,10 +1804,6 @@ minimatch@^3.0.2, minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimist@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.5.tgz#d7aa327bcecf518f9106ac6b8f003fa3bcea8566"
-
 minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
@@ -1833,13 +1821,6 @@ mkdirp@^0.5.1, mkdirp@~0.5.1:
 module-details-from-path@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/module-details-from-path/-/module-details-from-path-1.0.3.tgz#114c949673e2a8a35e9d35788527aa37b679da2b"
-
-mold-source-map@~0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/mold-source-map/-/mold-source-map-0.4.0.tgz#cf67e0b31c47ab9badb5c9c25651862127bb8317"
-  dependencies:
-    convert-source-map "^1.1.0"
-    through "~2.2.7"
 
 mri@^1.1.0:
   version "1.1.0"
@@ -1864,25 +1845,13 @@ node-fetch@^1.0.1:
     encoding "^0.1.11"
     is-stream "^1.0.1"
 
-nodent-compiler@>=3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/nodent-compiler/-/nodent-compiler-3.1.5.tgz#8c09289eacf7256bda89c2b88941681d5cccf80c"
+nodent-compiler@^3.1.6:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/nodent-compiler/-/nodent-compiler-3.1.7.tgz#78198d9baacc491b0065b8c65bc0ca83d3fcd2a2"
   dependencies:
     acorn ">=2.5.2"
     acorn-es7-plugin ">=1.1.6"
     source-map "^0.5.6"
-
-nodent-runtime@^3.0.4:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/nodent-runtime/-/nodent-runtime-3.2.0.tgz#8b79500a1274176d732b60284c7a7d10d9e44180"
-
-nodent@^3.0.17:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/nodent/-/nodent-3.1.5.tgz#021c8fb392e7901cd8fbcd816ff1350e254af05d"
-  dependencies:
-    nodent-compiler ">=3.1.5"
-    nodent-runtime "^3.0.4"
-    resolve "^1.5.0"
 
 normalize-path@^2.0.1:
   version "2.1.1"
@@ -2499,7 +2468,7 @@ resolve-from@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-1.0.1.tgz#26cbfe935d1aeeeabb29bc3fe5aeb01e93d44226"
 
-resolve@^1.1.6, resolve@^1.4.0, resolve@^1.5.0:
+resolve@^1.1.6, resolve@^1.4.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.5.0.tgz#1f09acce796c9a762579f31b2c1cc4c3cddf9f36"
   dependencies:
@@ -2563,16 +2532,18 @@ rollup-plugin-node-resolve@^3.0.2:
     is-module "^1.0.0"
     resolve "^1.1.6"
 
-rollup-plugin-nodent@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-nodent/-/rollup-plugin-nodent-0.1.3.tgz#2509f9d9026e158f8afe22c7b5a4665f9f762566"
+"rollup-plugin-nodent@github:developit/rollup-plugin-nodent":
+  version "0.2.1"
+  uid "558eacf39d84980f63fd8737e35bff241dabc944"
+  resolved "https://codeload.github.com/developit/rollup-plugin-nodent/tar.gz/558eacf39d84980f63fd8737e35bff241dabc944"
   dependencies:
-    nodent "^3.0.17"
+    acorn-dynamic-import "^3.0.0"
+    nodent-compiler "^3.1.6"
     rollup-pluginutils "^2.0.1"
 
-rollup-plugin-postcss@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-postcss/-/rollup-plugin-postcss-1.2.6.tgz#48266ccb2a77f0b408e8d6e256cfa2cbae10204e"
+rollup-plugin-postcss@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-postcss/-/rollup-plugin-postcss-1.2.7.tgz#49bfecc6f09ed896403cc0e9c69b04ad2a4be1bc"
   dependencies:
     chalk "^2.0.0"
     concat-with-sourcemaps "^1.0.5"
@@ -2616,11 +2587,11 @@ rollup-plugin-typescript@^0.8.1:
     tippex "^2.1.1"
     typescript "^1.8.9"
 
-rollup-plugin-uglify@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-uglify/-/rollup-plugin-uglify-2.0.1.tgz#67b37ad1efdafbd83af4c36b40c189ee4866c969"
+rollup-plugin-uglify@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-uglify/-/rollup-plugin-uglify-3.0.0.tgz#a34eca24617709c6bf1778e9653baafa06099b86"
   dependencies:
-    uglify-js "^3.0.9"
+    uglify-es "^3.3.7"
 
 rollup-pluginutils@^1.3.1, rollup-pluginutils@^1.5.1:
   version "1.5.2"
@@ -2636,9 +2607,9 @@ rollup-pluginutils@^2.0.1:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
 
-rollup@^0.55.0:
-  version "0.55.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.55.0.tgz#e547149333bdd91457a9e8101cf86783e21c576e"
+rollup@^0.55.1:
+  version "0.55.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.55.1.tgz#baf4f23abe3014b29e56dea7d72d9946e56ac7dd"
 
 run-async@^2.2.0:
   version "2.3.0"
@@ -2811,10 +2782,6 @@ through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
-through@~2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/through/-/through-2.2.7.tgz#6e8e21200191d4eb6a99f6f010df46aa1c6eb2bd"
-
 tippex@^2.1.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tippex/-/tippex-2.3.1.tgz#a2fd5b7087d7cbfb20c9806a6c16108c2c0fafda"
@@ -2828,6 +2795,10 @@ tmp@^0.0.33:
 to-fast-properties@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
+
+tslib@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
 
 type-check@~0.3.2:
   version "0.3.2"
@@ -2851,16 +2822,9 @@ ua-parser-js@^0.7.9:
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
 
-uglify-es@^3.3.6:
-  version "3.3.8"
-  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.8.tgz#f2c68e6cff0d0f9dc9577e4da207151c2e753b7e"
-  dependencies:
-    commander "~2.13.0"
-    source-map "~0.6.1"
-
-uglify-js@^3.0.9:
-  version "3.3.8"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.3.8.tgz#51e9a5db73afb53ac98603d08224edcd0be45fd8"
+uglify-es@^3.3.7:
+  version "3.3.9"
+  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.9.tgz#0c1c4f0700bed8dbc124cdb304d2592ca203e677"
   dependencies:
     commander "~2.13.0"
     source-map "~0.6.1"
